@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mediterranean Voyage · Family of 5 · October 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,500&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0C2030; --ink-2:#12314A; --ink-3:#1C4460;
+    --sea:#41A0B4; --sea-deep:#2A6C7C;
+    --brass:#CBA24A; --brass-soft:#E0C079;
+    --parchment:#F3ECDA; --paper-2:#E7DBC0;
+    --coral:#E4633A;
+    --on-dark:#E9F1F2; --muted:#9FB6C0; --muted-2:#7F98A3;
+    --line:rgba(203,162,74,.28);
+    --ok:#4FA07C; --no:#C56B54;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--ink); color:var(--on-dark);
+    font-family:"Inter",system-ui,sans-serif; font-size:16px; line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1040px; margin:0 auto; padding:0 28px}
+  h1,h2,h3{font-family:"Fraunces",Georgia,serif; font-weight:900; line-height:1.04; margin:0}
+  .mono{font-family:"Space Mono",monospace}
+  a{color:var(--sea)}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative; overflow:hidden; padding:76px 0 54px;
+    background:
+      radial-gradient(120% 90% at 80% -10%, rgba(65,160,180,.18), transparent 55%),
+      linear-gradient(180deg,#0A1B29 0%, var(--ink) 70%);
+    border-bottom:1px solid var(--line);}
+  /* faint chart grid */
+  .hero::before{content:""; position:absolute; inset:0; opacity:.5;
+    background-image:linear-gradient(rgba(159,182,192,.05) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(159,182,192,.05) 1px,transparent 1px);
+    background-size:44px 44px; mask-image:linear-gradient(180deg,#000,transparent 85%);}
+  .eyebrow{font-family:"Space Mono",monospace; font-size:12px; letter-spacing:.32em;
+    text-transform:uppercase; color:var(--brass); margin:0 0 22px; position:relative}
+  .hero h1{font-size:clamp(38px,7vw,74px); letter-spacing:-.02em; position:relative}
+  .hero h1 em{font-style:italic; font-weight:500; color:var(--brass-soft)}
+  .lede{max-width:640px; margin:22px 0 0; font-size:19px; color:#D7E4E6; position:relative}
+  .coords{margin-top:30px; display:flex; flex-wrap:wrap; gap:10px 26px; position:relative;
+    font-family:"Space Mono",monospace; font-size:12.5px; color:var(--muted); letter-spacing:.04em}
+  .coords span{white-space:nowrap}
+  .coords b{color:var(--sea); font-weight:700}
+
+  /* recommended readout card in hero */
+  .readout{position:relative; margin-top:38px; display:grid; grid-template-columns:repeat(3,1fr);
+    gap:1px; background:var(--line); border:1px solid var(--line); border-radius:14px; overflow:hidden}
+  .readout .cell{background:linear-gradient(180deg,#0E2536,#0B1E2D); padding:20px 22px}
+  .readout .k{font-family:"Space Mono",monospace; font-size:11px; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--muted-2)}
+  .readout .v{font-family:"Fraunces",serif; font-weight:900; font-size:27px; margin-top:8px; color:var(--on-dark)}
+  .readout .v small{display:block; font-family:"Inter"; font-weight:500; font-size:12.5px; color:var(--muted); margin-top:4px; letter-spacing:0}
+  .tag-rec{display:inline-block; font-family:"Space Mono",monospace; font-size:11px; letter-spacing:.14em;
+    color:#0C2030; background:var(--brass); padding:3px 9px; border-radius:5px; text-transform:uppercase; font-weight:700}
+
+  /* ---------- SECTIONS ---------- */
+  .sec{padding:64px 0; border-bottom:1px solid rgba(159,182,192,.1)}
+  .sec-head{display:flex; align-items:baseline; gap:18px; margin-bottom:8px}
+  .sec-num{font-family:"Space Mono",monospace; font-size:13px; color:var(--brass); letter-spacing:.1em;
+    border:1px solid var(--line); border-radius:50%; width:40px;height:40px; flex:0 0 40px;
+    display:flex; align-items:center; justify-content:center}
+  .sec h2{font-size:clamp(26px,4.4vw,40px); letter-spacing:-.015em}
+  .sec-sub{color:var(--muted); max-width:680px; margin:14px 0 34px; font-size:16.5px}
+  .sec-sub.tight{margin-bottom:26px}
+
+  /* option cards */
+  .cards{display:grid; gap:16px}
+  .cards.two{grid-template-columns:1fr 1fr}
+  .cards.three{grid-template-columns:repeat(3,1fr)}
+  .card{background:linear-gradient(180deg,#12314A,#0F2A3F); border:1px solid rgba(159,182,192,.16);
+    border-radius:14px; padding:22px 22px 20px; position:relative}
+  .card.win{border-color:var(--brass); box-shadow:0 0 0 1px rgba(203,162,74,.35), 0 18px 40px -24px rgba(203,162,74,.4)}
+  .card .rib{position:absolute; top:-11px; left:20px}
+  .card h3{font-size:20px; letter-spacing:-.01em}
+  .card .price{font-family:"Space Mono",monospace; font-weight:700; color:var(--brass-soft); font-size:15px; margin-top:2px}
+  .card .desc{color:var(--muted); font-size:14.5px; margin:12px 0 4px}
+  .pc{list-style:none; padding:0; margin:12px 0 0}
+  .pc li{display:flex; gap:9px; font-size:14px; margin:7px 0; color:#D2E0E3; align-items:flex-start}
+  .pc li .m{font-family:"Space Mono",monospace; font-weight:700; flex:0 0 auto; margin-top:1px}
+  .pc li.pro .m{color:var(--ok)}
+  .pc li.con .m{color:var(--no)}
+
+  /* generic table */
+  .tbl-wrap{overflow-x:auto; border:1px solid var(--line); border-radius:14px; background:#0F2A3F}
+  table{border-collapse:collapse; width:100%; min-width:560px}
+  th,td{text-align:left; padding:13px 16px; font-size:14px; border-bottom:1px solid rgba(159,182,192,.12)}
+  thead th{font-family:"Space Mono",monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase;
+    color:var(--muted-2); background:#0C2438}
+  tbody tr:last-child td{border-bottom:none}
+  td .num{font-family:"Space Mono",monospace; color:var(--brass-soft); font-weight:700}
+  tr.hl td{background:rgba(203,162,74,.09)}
+  .dot{display:inline-block; letter-spacing:2px; color:var(--brass)}
+  .dot .off{color:rgba(159,182,192,.28)}
+
+  /* parchment callout (recommendation) */
+  .rec{background:linear-gradient(180deg,var(--parchment),var(--paper-2)); color:#243240;
+    border-radius:14px; padding:24px 26px; margin-top:22px; position:relative;
+    border:1px solid rgba(12,32,48,.12)}
+  .rec .lbl{font-family:"Space Mono",monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--sea-deep); display:flex; align-items:center; gap:9px}
+  .rec .lbl::before{content:"◆"; color:var(--brass)}
+  .rec h3{font-family:"Fraunces",serif; color:#122636; font-size:22px; margin:10px 0 6px}
+  .rec p{margin:6px 0 0; color:#38495a; font-size:15.5px}
+  .rec strong{color:#0C2030}
+
+  /* miles instrument panel */
+  .panel{background:
+      radial-gradient(90% 120% at 100% 0%, rgba(65,160,180,.12), transparent 60%),
+      linear-gradient(180deg,#0E2739,#0B1E2D);
+    border:1px solid var(--line); border-radius:16px; padding:26px; margin-top:20px}
+  .gauge{display:grid; grid-template-columns:1fr 1fr; gap:26px; align-items:center}
+  .meter{height:16px; border-radius:10px; background:rgba(159,182,192,.14); overflow:hidden; position:relative;
+    border:1px solid rgba(159,182,192,.14)}
+  .meter i{display:block; height:100%; background:linear-gradient(90deg,var(--sea),var(--brass)); width:82.9%}
+  .ledger{list-style:none; padding:0; margin:0}
+  .ledger li{display:flex; justify-content:space-between; gap:16px; padding:10px 0;
+    border-bottom:1px dashed rgba(159,182,192,.18); font-size:14.5px}
+  .ledger li:last-child{border-bottom:none}
+  .ledger .amt{font-family:"Space Mono",monospace; font-weight:700; color:var(--brass-soft)}
+  .ledger li.total{font-weight:700; color:#fff}
+  .ledger li.total .amt{color:var(--sea)}
+
+  /* plotted-course timeline */
+  .course{position:relative; margin-top:26px; padding-left:8px}
+  .leg{position:relative; padding:0 0 26px 40px; border-left:2px dashed var(--brass); margin-left:14px}
+  .leg:last-child{border-left-color:transparent}
+  .leg::before{content:""; position:absolute; left:-9px; top:2px; width:16px; height:16px; border-radius:50%;
+    background:var(--ink); border:2px solid var(--brass)}
+  .leg.sea::before{background:var(--brass)}
+  .leg .when{font-family:"Space Mono",monospace; font-size:12px; letter-spacing:.08em; color:var(--sea)}
+  .leg .what{font-weight:600; margin-top:3px; font-size:16px}
+  .leg .meta{color:var(--muted); font-size:13.5px; margin-top:2px}
+
+  .kicker{font-family:"Space Mono",monospace; color:var(--brass); font-size:12px; letter-spacing:.14em; text-transform:uppercase}
+
+  /* open items */
+  .todo{list-style:none; padding:0; margin:18px 0 0; display:grid; gap:10px}
+  .todo li{background:#0F2A3F; border:1px solid rgba(159,182,192,.14); border-radius:11px; padding:14px 16px;
+    display:flex; gap:12px; align-items:flex-start; font-size:14.5px}
+  .todo .box{font-family:"Space Mono",monospace; color:var(--brass); flex:0 0 auto}
+  .todo .who{margin-left:auto; font-family:"Space Mono",monospace; font-size:11px; letter-spacing:.08em;
+    color:var(--muted-2); white-space:nowrap; text-transform:uppercase}
+
+  footer{padding:40px 0 64px; color:var(--muted-2); font-size:12.5px}
+  footer .mono{color:var(--muted)}
+
+  @media (max-width:760px){
+    .readout{grid-template-columns:1fr}
+    .cards.two,.cards.three{grid-template-columns:1fr}
+    .gauge{grid-template-columns:1fr; gap:18px}
+    .sec-head{gap:12px}
+  }
+  @media (prefers-reduced-motion:no-preference){
+    .reveal{opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease}
+    .reveal.in{opacity:1; transform:none}
+  }
+  @media print{
+    body{background:#fff; color:#12222f}
+    .hero,.panel,.card,.tbl-wrap{background:#fff !important; color:#12222f}
+    .sec{border-color:#ccc}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Voyage Plan · Party of 5 · Oct 2026</p>
+    <h1>A Mediterranean crossing,<br><em>plotted end to end.</em></h1>
+    <p class="lede">One decision at a time — the suite, the route, the week in Croatia, and how five people fly home in lie-flat seats for the price of economy. Every figure here was pulled live on <span class="mono">12 Jul 2026</span>.</p>
+    <div class="coords">
+      <span>ORIGIN·A <b>SFO</b> family of 4</span>
+      <span>ORIGIN·B <b>SIN</b> Jarred</span>
+      <span>SHIP <b>Odyssey of the Seas</b></span>
+      <span>PORTS <b>Dubrovnik → Rome → Greek Isles</b></span>
+    </div>
+
+    <div class="readout">
+      <div class="cell">
+        <div class="k">Recommended plan</div>
+        <div class="v"><span class="tag-rec">Route 2 · Option 6</span></div>
+        <div class="v" style="font-size:19px;margin-top:12px">Croatia first, Delta One home</div>
+      </div>
+      <div class="cell">
+        <div class="k">Flights · out of pocket</div>
+        <div class="v">~$3,300<small>+ ~375k Amex points transferred to Delta</small></div>
+      </div>
+      <div class="cell">
+        <div class="k">Suite · two-level, sleeps 6</div>
+        <div class="v">~$31,782<small>Odyssey Royal Loft · Oct 18 sailing</small></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- 01 SUITE -->
+<section class="sec"><div class="wrap reveal">
+  <div class="sec-head"><div class="sec-num">01</div><h2>The suite</h2></div>
+  <p class="sec-sub">The brief was a two-level (loft) suite that fits five. Those exist only on Royal Caribbean's largest ships, they're a single cabin per ship, and a five-guest booking is phone-only. Here's what's actually bookable, cheapest to priciest.</p>
+
+  <div class="cards three">
+    <div class="card">
+      <h3>Caribbean · Star Loft</h3>
+      <div class="price">$11,464 – $13,182 · sleeps 6</div>
+      <p class="desc">Two-story loft on Symphony / Allure, weekly out of Florida &amp; Galveston.</p>
+      <ul class="pc">
+        <li class="pro"><span class="m">+</span>Best value by far — ~⅓ the Europe price.</li>
+        <li class="pro"><span class="m">+</span>Warm-water itinerary, easy US flights.</li>
+        <li class="con"><span class="m">–</span>No European add-on; it's a different trip.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Alaska · Anthem lofts</h3>
+      <div class="price">$13,404 – $18,414 · sleeps ~6</div>
+      <p class="desc">Sky / Grand / Owner's Loft on Anthem, ex-Seattle, through late Sept.</p>
+      <ul class="pc">
+        <li class="pro"><span class="m">+</span>Two-level suite well under budget.</li>
+        <li class="con"><span class="m">–</span>Season ends ~late Sept — tight window.</li>
+        <li class="con"><span class="m">–</span>Cold-weather trip, no Croatia leg.</li>
+      </ul>
+    </div>
+    <div class="card win">
+      <div class="rib"><span class="tag-rec">Chosen</span></div>
+      <h3>Europe · Odyssey Royal Loft</h3>
+      <div class="price">$31,782 (Oct 18) · sleeps 6</div>
+      <p class="desc">The two-story flagship suite — baby grand, wraparound balcony — 7-night Greek Isles &amp; Italy from Rome.</p>
+      <ul class="pc">
+        <li class="pro"><span class="m">+</span>Pairs with the Croatia week you want.</li>
+        <li class="pro"><span class="m">+</span>Santorini / Mykonos itinerary; a real trip-of-the-year.</li>
+        <li class="con"><span class="m">–</span>~$7k over the $25k target; priciest of the three.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="rec">
+    <div class="lbl">Recommendation</div>
+    <h3>Keep the Odyssey Royal Loft (Oct 18).</h3>
+    <p>You're paying a premium over the Caribbean loft, but it's the only option that carries the Greek Isles itinerary and a Croatia add-on. Both Oct 11 and Oct 18 are held — the routing below is why <strong>Oct 18 wins</strong>. Confirm the true five-guest price by phone (the suite sleeps 6, but a 5th guest pays fare and can't be booked online).</p>
+  </div>
+</div></section>
+
+<!-- 02 ROUTE -->
+<section class="sec"><div class="wrap reveal">
+  <div class="sec-head"><div class="sec-num">02</div><h2>The route</h2></div>
+  <p class="sec-sub tight">You're coming from Singapore; the family from San Francisco. The cruise is round-trip Rome, so the only real question is which end you attach Croatia to — and that sets the cruise date.</p>
+
+  <div class="cards two">
+    <div class="card">
+      <h3>Route 1 · cruise Oct 11</h3>
+      <div class="price">Everyone → Rome, Croatia after</div>
+      <p class="desc">Meet in Rome, sail first, then Dubrovnik Oct 18–25, fly home <em>from Dubrovnik</em>.</p>
+      <ul class="pc">
+        <li class="pro"><span class="m">+</span>Your Singapore→Rome leg is cheaper &amp; faster ($310, 15–16h).</li>
+        <li class="con"><span class="m">–</span>Flight home from Dubrovnik is brutal: <b>$733–1,237, 18–36h, 2 stops.</b></li>
+        <li class="con"><span class="m">–</span>Croatia falls in <b>late Oct</b> — cooler, ferries winding down.</li>
+      </ul>
+    </div>
+    <div class="card win">
+      <div class="rib"><span class="tag-rec">Recommended</span></div>
+      <h3>Route 2 · cruise Oct 18</h3>
+      <div class="price">Everyone → Dubrovnik first, home from Rome</div>
+      <p class="desc">Croatia Oct 10–17, hop to Rome, sail, fly home <em>from Rome</em>.</p>
+      <ul class="pc">
+        <li class="pro"><span class="m">+</span>Flight home from Rome is easy: <b>$535, 15h, 1 stop</b> (or Delta One on miles).</li>
+        <li class="pro"><span class="m">+</span>Croatia lands in <b>mid-Oct</b> — warm, islands open.</li>
+        <li class="con"><span class="m">–</span>Your SIN→Dubrovnik leg costs ~$220 more &amp; adds a stop.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="rec">
+    <div class="lbl">Recommendation</div>
+    <h3>Route 2 — Croatia first, cruise Oct 18, home from Rome.</h3>
+    <p>The return leg decides it. Ending in Dubrovnik means an 18–36 hour trip home; ending in Rome means 15 hours (or a lie-flat award). That swing dwarfs the small premium on your Singapore leg. <strong>Release the Oct 11 hold.</strong></p>
+  </div>
+</div></section>
+
+<!-- 03 CROATIA -->
+<section class="sec"><div class="wrap reveal">
+  <div class="sec-head"><div class="sec-num">03</div><h2>The week in Croatia</h2></div>
+  <p class="sec-sub tight">Route 2 puts you in Dubrovnik <b>Oct 10–17</b>; Route 1 would put you there <b>Oct 18–25</b>. One week of difference changes the trip more than you'd think.</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Factor</th><th>Mid-Oct · Oct 10–17 (Route 2)</th><th>Late-Oct · Oct 18–25 (Route 1)</th></tr></thead>
+      <tbody>
+        <tr><td>Weather</td><td>~22°C, sunnier, drier</td><td>~18°C, more overcast, rain risk</td></tr>
+        <tr><td>Sea</td><td>Swimmable ~21–22°C</td><td>Bracing ~18°C</td></tr>
+        <tr class="hl"><td>Islands &amp; ferries</td><td>Hvar, Lokrum, Elafiti <b>all running</b></td><td>Seasonal ferries end Oct 31; Lokrum closes; some restaurants shutter</td></tr>
+        <tr><td>Daylight</td><td>Normal</td><td>EU clocks fall back Oct 25 — early dark</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="rec">
+    <div class="lbl">Recommendation</div>
+    <h3>Take the mid-October week (which Route 2 gives you anyway).</h3>
+    <p>The hard cutoff is <strong>October 31</strong> — that's when the seasonal catamarans to Hvar and the Split-coast route stop and Lokrum closes for winter. Mid-Oct sits comfortably inside the season; late-Oct is right up against the edge. This reinforces Route 2 rather than competing with it.</p>
+  </div>
+</div></section>
+
+<!-- 04 FLIGHTS -->
+<section class="sec"><div class="wrap reveal">
+  <div class="sec-head"><div class="sec-num">04</div><h2>The flights</h2></div>
+  <p class="sec-sub">Six ways to fly the same Route 2 trip, scored equally on cost, time, and amenity (business class is the big perk). Group total = 5 people (4 from SFO + you from SIN). Ratings are ●/3 — more filled = better on that axis.</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>#</th><th>Option</th><th>Cost · 5 ppl</th><th>Cabin</th><th>Cost</th><th>Time</th><th>Amenity</th></tr></thead>
+      <tbody>
+        <tr><td class="num">1</td><td>Rock-bottom</td><td class="num">~$5,700</td><td>Economy</td><td><span class="dot">●●●</span></td><td><span class="dot">●<span class="off">●●</span></span></td><td><span class="dot">●<span class="off">●●</span></span></td></tr>
+        <tr><td class="num">2</td><td>Best value</td><td class="num">~$5,800</td><td>Economy, clean 1-stops</td><td><span class="dot">●●●</span></td><td><span class="dot">●●<span class="off">●</span></span></td><td><span class="dot">●<span class="off">●●</span></span></td></tr>
+        <tr><td class="num">3</td><td>Fastest</td><td class="num">~$7,100</td><td>Economy, quickest</td><td><span class="dot">●●<span class="off">●</span></span></td><td><span class="dot">●●●</span></td><td><span class="dot">●<span class="off">●●</span></span></td></tr>
+        <tr><td class="num">4</td><td>Business home (cash)</td><td class="num">~$19,700</td><td>Econ out · Delta One home</td><td><span class="dot">●<span class="off">●●</span></span></td><td><span class="dot">●●<span class="off">●</span></span></td><td><span class="dot">●●<span class="off">●</span></span></td></tr>
+        <tr><td class="num">5</td><td>All business</td><td class="num">~$44,600</td><td>Business both ways</td><td><span class="dot"><span class="off">●●●</span></span></td><td><span class="dot">●●<span class="off">●</span></span></td><td><span class="dot">●●●</span></td></tr>
+        <tr class="hl"><td class="num">6</td><td><b>Balanced (Diamond) ★</b></td><td class="num">~$3,300<br><span style="color:var(--muted);font-size:11px">+375k pts</span></td><td>Econ out · Delta One home <b>on miles</b></td><td><span class="dot">●●●</span></td><td><span class="dot">●●<span class="off">●</span></span></td><td><span class="dot">●●●</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="cards two" style="margin-top:18px">
+    <div class="card">
+      <h3>The legs behind them</h3>
+      <ul class="pc">
+        <li class="pro"><span class="m">›</span><b>SFO→Dubrovnik</b> — SWISS $518/14h · KLM·Delta $646/13h50 (earns miles)</li>
+        <li class="pro"><span class="m">›</span><b>SIN→Dubrovnik</b> — Turkish $588/15h30 · Lufthansa $529/17h25</li>
+        <li class="pro"><span class="m">›</span><b>Rome→SFO (home)</b> — BA $535/15h · <b>Delta One on miles</b> ~115k+$25</li>
+        <li class="pro"><span class="m">›</span><b>Dubrovnik→Rome hop</b> — Croatia/ITA ~$100, 1h15</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>On timing &amp; airports</h3>
+      <ul class="pc">
+        <li class="con"><span class="m">–</span><b>No nonstops.</b> Only ITA flies CA→Rome direct ($775 econ / $6,111 biz) — and it earns you nothing.</li>
+        <li class="con"><span class="m">–</span><b>SMF is not cheaper</b> — ~$520 vs SFO's $360, similar time. Use SFO.</li>
+        <li class="pro"><span class="m">+</span><b>±2 days:</b> Oct 9–10 are cheapest; leaving earlier <em>costs more</em>. Return is fixed by the cruise.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="rec">
+    <div class="lbl">Recommendation</div>
+    <h3>Option 6 if you'll spend miles; Option 2 if you want it purely simple.</h3>
+    <p>Option 6 flies the whole family home in lie-flat Delta One for <strong>~$3,300 cash</strong> — less than everyone in economy — by burning points you're sitting on. If you'd rather not touch miles, <strong>Option 2 (~$5,800, all economy, sane 1-stops)</strong> is the clean default. Skip #5 — all-business ≈ 1.4× the cost of the suite itself.</p>
+  </div>
+</div></section>
+
+<!-- 05 MILES -->
+<section class="sec"><div class="wrap reveal">
+  <div class="sec-head"><div class="sec-num">05</div><h2>The miles that make Option 6 free-ish</h2></div>
+  <p class="sec-sub tight">Delta One home for five costs ~575,000 SkyMiles (5 × ~115k, one-way). Here's the pool that covers it — confirmed by logging in on 12 Jul.</p>
+
+  <div class="panel">
+    <div class="gauge">
+      <div>
+        <div class="kicker">Coverage</div>
+        <div style="font-family:'Fraunces',serif;font-weight:900;font-size:34px;margin:6px 0 14px">~712,600 <span style="color:var(--muted);font-size:16px;font-weight:400">available</span></div>
+        <div class="meter"><i></i></div>
+        <div class="mono" style="font-size:12px;color:var(--muted);margin-top:8px">575,000 needed · ~137,600 to spare (before your other Amex pools)</div>
+      </div>
+      <ul class="ledger">
+        <li><span>Amex Membership Rewards <span class="mono" style="color:var(--muted-2)">(Biz Platinum)</span></span><span class="amt">512,595</span></li>
+        <li><span>Delta SkyMiles <span class="mono" style="color:var(--muted-2)">(on account)</span></span><span class="amt">~200,000</span></li>
+        <li class="total"><span>Total → transferable to Delta (1:1)</span><span class="amt">~712,600</span></li>
+        <li><span>Delta One home · needed</span><span class="amt" style="color:var(--no)">−575,000</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="rec">
+    <div class="lbl">Recommendation</div>
+    <h3>Transfer ~375,000 Amex points to Delta, keep the rest.</h3>
+    <p>200k SkyMiles are already there; move <strong>~375k Amex MR → Delta (instant, 1:1)</strong> to reach 575k. That leaves ~137k Amex points untouched, plus your other Amex logins (business + personal Platinum) still uncounted. Chase, Capital One, Citi, and Wells <em>don't</em> transfer to Delta — ignore them. (Amex adds a tiny excise-tax fee, capped ~$99.)</p>
+  </div>
+</div></section>
+
+<!-- 06 THE PLAN -->
+<section class="sec"><div class="wrap reveal">
+  <div class="sec-head"><div class="sec-num">06</div><h2>The plan, plotted</h2></div>
+  <p class="sec-sub tight">Route 2 · Option 6 · Odyssey Royal Loft — the full course, port to port.</p>
+
+  <div class="course">
+    <div class="leg"><div class="when">THU · OCT 8</div><div class="what">Singapore → Dubrovnik — you</div><div class="meta">Turkish via Istanbul · ~15h30 · economy</div></div>
+    <div class="leg"><div class="when">FRI · OCT 9</div><div class="what">San Francisco → Dubrovnik — family of 4</div><div class="meta">SWISS via Zürich · ~14h · economy · ~$518 pp</div></div>
+    <div class="leg sea"><div class="when">OCT 10 – 17</div><div class="what">Dubrovnik &amp; the islands</div><div class="meta">Mid-October — warm, sea swimmable, Hvar / Lokrum / Elafiti all running</div></div>
+    <div class="leg"><div class="when">SAT · OCT 17</div><div class="what">Dubrovnik → Rome</div><div class="meta">Croatia/ITA nonstop · 1h15 · ~$100 pp</div></div>
+    <div class="leg sea"><div class="when">OCT 18 – 25</div><div class="what">Odyssey of the Seas · Greek Isles &amp; Italy</div><div class="meta">Royal Loft Suite (two-level, sleeps 6) · Santorini · Mykonos · ~$31,782</div></div>
+    <div class="leg"><div class="when">SUN · OCT 25</div><div class="what">Rome → San Francisco — all five</div><div class="meta">Delta One lie-flat on SkyMiles · taxes only ~$25 pp</div></div>
+  </div>
+
+  <div class="panel" style="margin-top:24px">
+    <div class="kicker">Bottom-line budget</div>
+    <ul class="ledger" style="margin-top:12px">
+      <li><span>Suite · Royal Loft (4-guest base; 5th &amp; gratuities extra)</span><span class="amt">~$31,782</span></li>
+      <li><span>Flights · Option 6 cash (econ out + hop + award taxes)</span><span class="amt">~$3,300</span></li>
+      <li><span>Flights · miles moved (Amex → Delta)</span><span class="amt">~375,000 pts</span></li>
+      <li><span>Croatia · 7 nights lodging &amp; food, 5 people</span><span class="amt">your call</span></li>
+      <li class="total"><span>Cash before Croatia &amp; onboard extras</span><span class="amt">~$35,100 + miles</span></li>
+    </ul>
+  </div>
+</div></section>
+
+<!-- 07 OPEN ITEMS -->
+<section class="sec"><div class="wrap reveal">
+  <div class="sec-head"><div class="sec-num">07</div><h2>Before you book</h2></div>
+  <p class="sec-sub tight">What's staged, what needs a number confirmed, and the one step only you can take.</p>
+  <ul class="todo">
+    <li><span class="box">☐</span><div><b>Release the Oct 11 cruise hold.</b> The plan runs on Oct 18.</div><span class="who">You</span></li>
+    <li><span class="box">☐</span><div><b>Confirm the true 5-guest suite price</b> — Royal Loft sleeps 6, but a 5th guest pays fare and is phone-only. I'll stage the exact call/quote.</div><span class="who">Me → You</span></li>
+    <li><span class="box">☐</span><div><b>Verify Delta One award seats &amp; price</b> for FCO→SFO on Oct 25 — pending delta.com recovering from today's outage.</div><span class="who">Me</span></li>
+    <li><span class="box">☐</span><div><b>Pull remaining Amex MR pools</b> (business + personal Platinum) for the exact grand total.</div><span class="who">Me</span></li>
+    <li><span class="box">☐</span><div><b>Transfer ~375k MR → Delta and ticket the award.</b> Irreversible (points can't be un-transferred) — I'll stage it to a confirm-and-click.</div><span class="who">You</span></li>
+  </ul>
+</div></section>
+
+</main>
+
+<footer><div class="wrap">
+  <p class="mono">Prepared 12 Jul 2026 · all fares &amp; award figures pulled live that day and move constantly — single-cabin suites and award seats especially. Verify at booking. Cruise suite prices are 4-guest base incl. taxes; gratuities ~$21/person/day extra.</p>
+</div></footer>
+
+<script>
+  const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
