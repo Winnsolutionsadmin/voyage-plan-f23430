@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cost Ledger · Mediterranean Voyage · Oct 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,500&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0C2030; --ink-2:#12314A;
+    --sea:#41A0B4; --sea-deep:#2A6C7C;
+    --brass:#CBA24A; --brass-soft:#E0C079;
+    --parchment:#F3ECDA; --coral:#E4633A;
+    --on-dark:#E9F1F2; --muted:#9FB6C0; --muted-2:#7F98A3;
+    --line:rgba(203,162,74,.28); --row:rgba(159,182,192,.1);
+    --ok:#4FA07C;
+  }
+  *{box-sizing:border-box}
+  body{margin:0; background:var(--ink); color:var(--on-dark);
+    font-family:"Inter",system-ui,sans-serif; font-size:15px; line-height:1.55}
+  .wrap{max-width:1000px; margin:0 auto; padding:0 24px}
+  h1,h2{font-family:"Fraunces",Georgia,serif; font-weight:900; line-height:1.05; margin:0}
+  .mono{font-family:"Space Mono",monospace}
+  a{color:var(--sea)}
+
+  header{padding:56px 0 30px; border-bottom:1px solid var(--line);
+    background:radial-gradient(120% 90% at 85% -10%, rgba(65,160,180,.16), transparent 55%)}
+  .eyebrow{font-family:"Space Mono",monospace; font-size:12px; letter-spacing:.3em; text-transform:uppercase;
+    color:var(--brass); margin:0 0 16px}
+  header h1{font-size:clamp(30px,5.5vw,50px); letter-spacing:-.02em}
+  header h1 em{font-style:italic; font-weight:500; color:var(--brass-soft)}
+  .sub{color:var(--muted); margin-top:14px; max-width:640px}
+  .legend{margin-top:22px; display:flex; flex-wrap:wrap; gap:10px 18px; font-family:"Space Mono",monospace; font-size:12px}
+  .flag{display:inline-flex; align-items:center; gap:7px; color:var(--muted)}
+  .pill{font-size:10.5px; letter-spacing:.1em; padding:2px 8px; border-radius:5px; font-weight:700; text-transform:uppercase}
+  .pill.firm{background:rgba(79,160,124,.18); color:#8fd3b2; border:1px solid rgba(79,160,124,.4)}
+  .pill.est{background:rgba(228,99,58,.16); color:#f0a88f; border:1px solid rgba(228,99,58,.4)}
+
+  section{padding:34px 0 6px}
+  .cat{display:flex; align-items:baseline; gap:14px; margin-bottom:12px}
+  .cat h2{font-size:22px}
+  .cat .sum{margin-left:auto; font-family:"Space Mono",monospace; color:var(--brass-soft); font-weight:700; font-size:16px}
+
+  .ledger{width:100%; border-collapse:collapse; background:#0F2A3F; border:1px solid var(--row); border-radius:12px; overflow:hidden}
+  .ledger th,.ledger td{padding:11px 14px; border-bottom:1px solid var(--row); font-size:14px; vertical-align:top}
+  .ledger thead th{font-family:"Space Mono",monospace; font-size:10.5px; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--muted-2); background:#0C2438; text-align:left}
+  .ledger td.r,.ledger th.r{text-align:right; font-family:"Space Mono",monospace; white-space:nowrap}
+  .ledger td.r{color:var(--brass-soft); font-weight:700}
+  .ledger td.miles{color:var(--sea)}
+  .ledger .item{font-weight:600; color:#fff}
+  .ledger .det{color:var(--muted); font-size:12.5px; margin-top:2px}
+  .ledger tr.sub td{background:rgba(203,162,74,.08); font-weight:700; border-top:1px solid var(--line)}
+  .ledger tr:last-child td{border-bottom:none}
+  .tf{font-family:"Space Mono",monospace; font-size:9.5px; letter-spacing:.06em; padding:2px 6px; border-radius:4px; font-weight:700}
+  .tf.firm{background:rgba(79,160,124,.16); color:#8fd3b2}
+  .tf.est{background:rgba(228,99,58,.14); color:#f0a88f}
+  .zero{color:var(--muted-2)}
+
+  .tblwrap{overflow-x:auto}
+  .ledger{min-width:600px}
+
+  /* grand total + miles panels */
+  .grand{margin:36px 0 6px; display:grid; grid-template-columns:1.3fr 1fr; gap:16px}
+  .panel{background:radial-gradient(90% 120% at 100% 0%, rgba(65,160,180,.12), transparent 60%),
+      linear-gradient(180deg,#0E2739,#0B1E2D); border:1px solid var(--line); border-radius:16px; padding:24px}
+  .panel .kicker{font-family:"Space Mono",monospace; color:var(--brass); font-size:11px; letter-spacing:.14em; text-transform:uppercase}
+  .big{font-family:"Fraunces",serif; font-weight:900; font-size:40px; margin:8px 0 2px}
+  .big small{display:block; font-family:"Inter"; font-weight:500; font-size:13px; color:var(--muted); margin-top:6px}
+  .rows{list-style:none; padding:0; margin:14px 0 0}
+  .rows li{display:flex; justify-content:space-between; gap:12px; padding:8px 0; border-bottom:1px dashed rgba(159,182,192,.18); font-size:14px}
+  .rows li:last-child{border-bottom:none}
+  .rows .amt{font-family:"Space Mono",monospace; font-weight:700; color:var(--brass-soft)}
+  .rows li.tot{color:#fff; font-weight:700} .rows li.tot .amt{color:var(--sea)}
+  .meter{height:14px; border-radius:9px; background:rgba(159,182,192,.14); overflow:hidden; border:1px solid rgba(159,182,192,.14); margin-top:6px}
+  .meter i{display:block; height:100%; width:82.9%; background:linear-gradient(90deg,var(--sea),var(--brass))}
+
+  .swap{margin-top:14px}
+  .note{color:var(--muted); font-size:13.5px; margin-top:10px}
+  footer{padding:36px 0 60px; color:var(--muted-2); font-size:12px}
+  .backlink{font-family:"Space Mono",monospace; font-size:12px}
+
+  @media (max-width:720px){ .grand{grid-template-columns:1fr} }
+  @media print{ body{background:#fff;color:#12222f} .panel,.ledger{background:#fff!important} }
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <p class="eyebrow">Cost Ledger · Route 2 · Option 6</p>
+  <h1>Every line, <em>every dollar.</em></h1>
+  <p class="sub">The full itemized cost of the recommended trip — economy out, Delta One home on miles, Odyssey Royal Loft, a week in Dubrovnik. Firm prices were pulled live 12 Jul 2026; estimates are flagged and sized conservatively.</p>
+  <div class="legend">
+    <span class="flag"><span class="pill firm">Firm</span> live-quoted price</span>
+    <span class="flag"><span class="pill est">Est</span> planning estimate — refine before booking</span>
+    <span class="flag mono">Party = 5 · SFO×4 + SIN×1</span>
+  </div>
+</div></header>
+
+<main class="wrap">
+
+<!-- FLIGHTS -->
+<section>
+  <div class="cat"><h2>1 · Flights</h2><span class="sum">$3,384 + 575,000 mi</span></div>
+  <div class="tblwrap"><table class="ledger">
+    <thead><tr><th>Item</th><th class="r">Qty</th><th class="r">Unit</th><th class="r">Cash</th><th class="r">Miles</th><th>Basis</th></tr></thead>
+    <tbody>
+      <tr><td><div class="item">SFO → Dubrovnik — family</div><div class="det">SWISS via Zürich, economy, ~14h</div></td><td class="r">4</td><td class="r">$518</td><td class="r">$2,072</td><td class="r zero">—</td><td><span class="tf firm">Firm</span></td></tr>
+      <tr><td><div class="item">Singapore → Dubrovnik — Jarred</div><div class="det">Turkish via Istanbul, economy, ~15h30</div></td><td class="r">1</td><td class="r">$588</td><td class="r">$588</td><td class="r zero">—</td><td><span class="tf firm">Firm</span></td></tr>
+      <tr><td><div class="item">Dubrovnik → Rome hop</div><div class="det">Croatia/ITA nonstop, 1h15</div></td><td class="r">5</td><td class="r">$100</td><td class="r">$500</td><td class="r zero">—</td><td><span class="tf firm">Firm</span></td></tr>
+      <tr><td><div class="item">Rome → SFO — Delta One (award)</div><div class="det">lie-flat business, one-way, on miles</div></td><td class="r">5</td><td class="r">115k</td><td class="r zero">—</td><td class="r miles">575,000</td><td><span class="tf est">Est</span></td></tr>
+      <tr><td><div class="item">Award taxes &amp; carrier fees</div><div class="det">cash portion of the miles ticket</div></td><td class="r">5</td><td class="r">$25</td><td class="r">$125</td><td class="r zero">—</td><td><span class="tf est">Est</span></td></tr>
+      <tr><td><div class="item">Amex → Delta transfer fee</div><div class="det">excise tax, $0.0006/pt, capped</div></td><td class="r">1</td><td class="r">$99</td><td class="r">$99</td><td class="r zero">—</td><td><span class="tf firm">Firm</span></td></tr>
+      <tr class="sub"><td>Flights subtotal</td><td class="r"></td><td class="r"></td><td class="r">$3,384</td><td class="r miles">575,000</td><td></td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- CRUISE -->
+<section>
+  <div class="cat"><h2>2 · Cruise — Odyssey Royal Loft</h2><span class="sum">~$38,017</span></div>
+  <div class="tblwrap"><table class="ledger">
+    <thead><tr><th>Item</th><th class="r">Qty</th><th class="r">Unit</th><th class="r">Cash</th><th class="r">Miles</th><th>Basis</th></tr></thead>
+    <tbody>
+      <tr><td><div class="item">Royal Loft Suite — fare</div><div class="det">2-level, sleeps 6 · 7 nights · 4-guest base, taxes incl</div></td><td class="r">1</td><td class="r">$31,782</td><td class="r">$31,782</td><td class="r zero">—</td><td><span class="tf firm">Firm</span></td></tr>
+      <tr><td><div class="item">5th-guest fare</div><div class="det">phone-only; suite sleeps 6 but 5th pays fare</div></td><td class="r">1</td><td class="r">~$2,500</td><td class="r">~$2,500</td><td class="r zero">—</td><td><span class="tf est">Est</span></td></tr>
+      <tr><td><div class="item">Prepaid gratuities</div><div class="det">suite rate ~$21 / person / day</div></td><td class="r">35</td><td class="r">$21</td><td class="r">$735</td><td class="r zero">—</td><td><span class="tf firm">Firm</span></td></tr>
+      <tr><td><div class="item">Onboard — drinks, wifi, excursions</div><div class="det">optional; sized for a family of 5, 7 nights</div></td><td class="r">—</td><td class="r">—</td><td class="r">~$3,000</td><td class="r zero">—</td><td><span class="tf est">Est</span></td></tr>
+      <tr class="sub"><td>Cruise subtotal</td><td class="r"></td><td class="r"></td><td class="r">~$38,017</td><td class="r zero">—</td><td></td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- CROATIA -->
+<section>
+  <div class="cat"><h2>3 · Croatia — Dubrovnik, 7 nights</h2><span class="sum">~$7,250</span></div>
+  <div class="tblwrap"><table class="ledger">
+    <thead><tr><th>Item</th><th class="r">Qty</th><th class="r">Unit</th><th class="r">Cash</th><th class="r">Miles</th><th>Basis</th></tr></thead>
+    <tbody>
+      <tr><td><div class="item">Lodging</div><div class="det">villa or 2 suites, Old-Town area, shoulder season</div></td><td class="r">7 nt</td><td class="r">~$450</td><td class="r">~$3,150</td><td class="r zero">—</td><td><span class="tf est">Est</span></td></tr>
+      <tr><td><div class="item">Dining</div><div class="det">5 people, mix of restaurants &amp; casual</div></td><td class="r">7 days</td><td class="r">~$400</td><td class="r">~$2,800</td><td class="r zero">—</td><td><span class="tf est">Est</span></td></tr>
+      <tr><td><div class="item">Islands &amp; activities</div><div class="det">Lokrum, Hvar day trip, walls, kayak</div></td><td class="r">—</td><td class="r">—</td><td class="r">~$1,000</td><td class="r zero">—</td><td><span class="tf est">Est</span></td></tr>
+      <tr><td><div class="item">Local transport</div><div class="det">airport transfers, taxis</div></td><td class="r">—</td><td class="r">—</td><td class="r">~$300</td><td class="r zero">—</td><td><span class="tf est">Est</span></td></tr>
+      <tr class="sub"><td>Croatia subtotal</td><td class="r"></td><td class="r"></td><td class="r">~$7,250</td><td class="r zero">—</td><td></td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- ROME + MISC -->
+<section>
+  <div class="cat"><h2>4 · Rome &amp; contingencies</h2><span class="sum">~$2,800</span></div>
+  <div class="tblwrap"><table class="ledger">
+    <thead><tr><th>Item</th><th class="r">Qty</th><th class="r">Unit</th><th class="r">Cash</th><th class="r">Miles</th><th>Basis</th></tr></thead>
+    <tbody>
+      <tr><td><div class="item">Rome hotel — pre-cruise night (Oct 17)</div><div class="det">2 rooms, near FCO or city</div></td><td class="r">1 nt</td><td class="r">~$450</td><td class="r">~$450</td><td class="r zero">—</td><td><span class="tf est">Est</span></td></tr>
+      <tr><td><div class="item">Rome port transfers</div><div class="det">to Civitavecchia embark</div></td><td class="r">—</td><td class="r">—</td><td class="r">~$150</td><td class="r zero">—</td><td><span class="tf est">Est</span></td></tr>
+      <tr><td><div class="item">Travel insurance</div><div class="det">trip protection on a ~$50k trip</div></td><td class="r">5</td><td class="r">~$140</td><td class="r">~$700</td><td class="r zero">—</td><td><span class="tf est">Est</span></td></tr>
+      <tr><td><div class="item">Contingency buffer</div><div class="det">~3% of trip — currency, incidentals</div></td><td class="r">—</td><td class="r">—</td><td class="r">~$1,500</td><td class="r zero">—</td><td><span class="tf est">Est</span></td></tr>
+      <tr class="sub"><td>Rome &amp; contingencies subtotal</td><td class="r"></td><td class="r"></td><td class="r">~$2,800</td><td class="r zero">—</td><td></td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- GRAND TOTAL + MILES -->
+<div class="grand">
+  <div class="panel">
+    <div class="kicker">Grand total · cash</div>
+    <div class="big">~$51,450<small>+ 575,000 SkyMiles (Delta One home for 5)</small></div>
+    <ul class="rows">
+      <li><span>Firm / quoted so far</span><span class="amt">~$35,900</span></li>
+      <li><span>Estimated (refine before booking)</span><span class="amt">~$15,550</span></li>
+      <li class="tot"><span>Total cash</span><span class="amt">~$51,450</span></li>
+    </ul>
+    <p class="note">The single biggest firm line is the suite ($31,782); the biggest movable line is Croatia lodging + dining (~$6k), which flexes with how you stay and eat.</p>
+  </div>
+  <div class="panel">
+    <div class="kicker">Miles ledger</div>
+    <div class="meter" style="margin-top:14px"><i></i></div>
+    <p class="mono" style="font-size:12px;color:var(--muted);margin:8px 0 0">575,000 needed · ~712,600 available</p>
+    <ul class="rows">
+      <li><span>Delta SkyMiles on account</span><span class="amt">200,000</span></li>
+      <li><span>Transfer from Amex MR (1:1)</span><span class="amt">375,000</span></li>
+      <li class="tot"><span>Applied to Delta One award</span><span class="amt">575,000</span></li>
+      <li><span>Amex MR remaining after</span><span class="amt" style="color:var(--muted)">~137,600</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- FLIGHT SWAP -->
+<section class="swap">
+  <div class="cat"><h2>Swap the flight line, see the total move</h2></div>
+  <p class="note" style="margin-bottom:12px">Everything above except flights (~$48,067) holds steady. Change only how you fly:</p>
+  <div class="tblwrap"><table class="ledger">
+    <thead><tr><th>Flight option</th><th class="r">Flights cash</th><th class="r">Miles</th><th class="r">Total trip cash</th></tr></thead>
+    <tbody>
+      <tr class="sub"><td>Option 6 — econ out + Delta One home on miles ★</td><td class="r">$3,384</td><td class="r miles">575,000</td><td class="r">~$51,450</td></tr>
+      <tr><td>Option 2 — all economy, no miles</td><td class="r">~$5,800</td><td class="r zero">0</td><td class="r">~$53,900</td></tr>
+      <tr><td>Option 4 — business home, paid cash</td><td class="r">~$19,700</td><td class="r zero">0</td><td class="r">~$67,800</td></tr>
+      <tr><td>Option 5 — business both ways</td><td class="r">~$44,600</td><td class="r zero">0</td><td class="r">~$92,700</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Option 6 lands the lowest cash total <em>and</em> the best cabin home — because it spends points instead of dollars on the one leg that matters.</p>
+</section>
+
+<footer>
+  <p class="mono">Prepared 12 Jul 2026. Firm lines = live-quoted that day (fares &amp; suite move constantly — verify at booking). Estimates are conservative planning figures for lodging, dining, onboard, insurance, and contingencies; they are not quotes. Cruise fare is 4-guest base incl. taxes; 5th-guest fare is a phone-only quote still open.</p>
+  <p class="backlink" style="margin-top:10px"><a href="./index.html">← Back to the full voyage plan</a></p>
+</footer>
+</main>
+</body>
+</html>
